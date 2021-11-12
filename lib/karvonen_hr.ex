@@ -1,5 +1,13 @@
 defmodule HeartRate.KarvonenHR do
-  def calc(age, resting_hr) do
-    target_heart_rate = ((( 220 - age ) - resting_hr) x intensity) + resting_hr
+  def target_heart_rate(age, resting_hr, intensity) do
+     ((( 220 - age ) - resting_hr) * intensity) + resting_hr
   end
+
+
+
+  def intensities do
+    55..95//5
+  end
+
+
 end
