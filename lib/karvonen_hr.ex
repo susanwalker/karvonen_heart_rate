@@ -4,10 +4,4 @@ defmodule HeartRate.KarvonenHR do
   end
 
 
-
-  def intensities do
-    55..95//5
-  end
-
-
 end
