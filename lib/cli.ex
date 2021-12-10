@@ -17,9 +17,15 @@ defmodule HeartRate.CLI do
     intensity_range = HeartRate.intensity_range()
     Enum.each(intensity_range, fn intensity ->
 
-      IO.puts(HeartRate.KarvonenHR.target_heart_rate(age, resting_hr, intensity))
-      end)
-
+    IO.puts(HeartRate.KarvonenHR.target_heart_rate(age, resting_hr, intensity))
+    end)
   end
 
+  def calculate(age, resting_hr) do
+    intensity_range = HeartRate.intensity_range()
+    Enum.map(intensity_range, fn intensity ->
+
+    { intensity, (HeartRate.KarvonenHR.target_heart_rate(age, resting_hr, intensity)) }
+    end)
+  end
 end
