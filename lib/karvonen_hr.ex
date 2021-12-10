@@ -1,9 +1,7 @@
 defmodule HeartRate.KarvonenHR do
   def target_heart_rate(age, resting_hr, intensity) do
-     ((( 220 - age ) - resting_hr) * intensity) + resting_hr
+     round(((( 220 - age ) - resting_hr) * (intensity / 100.0)) + resting_hr)
   end
-
-
 end
 
 #Resting Pulse: 65   Age: 22
